@@ -6,7 +6,7 @@ int main()
 {
 	std::cout << "Hello World!\n";
 
-	TestListInt();
+	ListTest();
 
 	return 0;
 }

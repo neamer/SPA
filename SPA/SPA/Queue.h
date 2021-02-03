@@ -12,7 +12,7 @@ class Queue
 public:
 	virtual void Push(const Type& item) = 0;
 
-	virtual Type Pop(const Type& item) = 0;
+	virtual Type Pop() = 0;
 
 	virtual Type& Peek() = 0;
 
@@ -83,7 +83,7 @@ public:
 		m_data[m_counter++] = item;
 	}
 
-	virtual Type Pop(const Type& item) override
+	virtual Type Pop() override
 	{
 		if (IsEmpty())
 			throw std::exception("Unable to pop item from empty Queue");
@@ -169,7 +169,7 @@ public:
 		m_counter++;
 	}
 
-	virtual Type Pop(const Type& item) override
+	virtual Type Pop() override
 	{
 		if (IsEmpty())
 			throw std::exception("Unable to pop item from empty Queue");
@@ -254,8 +254,8 @@ void TestQueue()
 
 		for (size_t i = 0; i < 10; i++)
 		{
-			queue->Pop(i);
-			queue2->Pop(i);
+			queue->Pop();
+			queue2->Pop();
 		}
 
 		std::cout << *queue << std::endl;

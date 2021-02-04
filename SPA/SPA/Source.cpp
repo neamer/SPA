@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 
 #include "List.h"
 #include "Stack.h"
@@ -6,14 +7,57 @@
 #include "PriorityQueue.h"
 #include "Heap.h"
 
+#include "BubbleSort.h"
+#include "InsertionSort.h"
+
+const char* crt = "\n>========================================<\n";
+
+void PrintArray(int* arr, int n)
+{
+	for (size_t i = 0; i < n; i++)
+	{
+		std::cout << arr[i] << "\t";
+	}
+}
+
+void FillArray(int* arr, int n)
+{
+	for (size_t i = 0; i < n; i++)
+	{
+		arr[i] = rand() % 1000 + 1;
+	}
+}
+
+void TestSort()
+{
+	srand(time(NULL));
+
+	int size;
+
+	std::cout << "Velicina niza -> ";
+	std::cin >> size;
+
+	int* arr = new int[size];
+
+	FillArray(arr, size);
+
+	PrintArray(arr, size);
+	std::cout << crt;
+
+	//BubbleSort(arr, size);
+	InsertionSort(arr, size);
+
+	PrintArray(arr, size);
+}
+
 int main()
 {
-	std::cout << "Hello World!\n";
-	
 	//TestStack();
 	//TestQueue();
-	TestPriorityQueue();
+	//TestPriorityQueue();
 	//TestHeap();
+
+	TestSort();
 
 	return 0;
 }

@@ -9,6 +9,8 @@
 
 #include "BubbleSort.h"
 #include "InsertionSort.h"
+#include "SelectionSort.h"
+#include "MergeSort.h"
 
 const char* crt = "\n>========================================<\n";
 
@@ -44,8 +46,14 @@ void TestSort()
 	PrintArray(arr, size);
 	std::cout << crt;
 
+	/*	In-place  */
 	//BubbleSort(arr, size);
-	InsertionSort(arr, size);
+	//InsertionSort(arr, size);
+	//SelectionSort(arr, size);
+
+	/*  Divide & Conquer  */
+	int* temp = new int[size];
+	MergeSort(arr, temp, 0, size);
 
 	PrintArray(arr, size);
 }

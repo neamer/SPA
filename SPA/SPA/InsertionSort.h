@@ -7,7 +7,13 @@ void InsertionSort(int* arr, int n)
 		na pocetku izvrsavanja sortirani dio je prvi element
 		a nesortirani je ostatak niza. Svaki prolaz petlje dodajemo
 		novi element u sortirani dio i pronalazimo njegovo mjesto.
+
+		BEST CASE - kada su svi elementi vec sortirani
+
+		WORST CASE - kada je niz sortiranu u obrnutom redoslijedu
 	*/
+
+	
 
 	for (size_t i = 1; i < n; i++)
 	{
@@ -22,6 +28,7 @@ void InsertionSort(int* arr, int n)
 		arr[j] = element;
 	}
 }
+
 
 void InsertionSortAlt(int* arr, int n)
 {
